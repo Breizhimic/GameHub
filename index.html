@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GAME COLLECTION — breizhimic</title>
+  <meta name="description" content="Portfolio de 6 jeux web — HTML5, CSS3, Vanilla JavaScript pur. Explorez, jouez, admirez le code.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+  <!-- FAVICON — Joystick rétro neon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230a0e27'/%3E%3C!-- Base du joystick --%3E%3Crect x='8' y='20' width='16' height='7' rx='3.5' fill='%2316213e' stroke='%2300d4ff' stroke-width='1.2'/%3E%3C!-- Boutons sur la base --%3E%3Ccircle cx='11.5' cy='23.5' r='2' fill='%23ff006e' opacity='.9'/%3E%3Ccircle cx='20.5' cy='23.5' r='2' fill='%2300ff88' opacity='.9'/%3E%3C!-- Tige du joystick --%3E%3Crect x='14.5' y='11' width='3' height='10' rx='1.5' fill='%2300d4ff'/%3E%3C!-- Boule du joystick --%3E%3Ccircle cx='16' cy='9.5' r='4' fill='%2300d4ff' opacity='.95'/%3E%3Ccircle cx='14.8' cy='8.3' r='1.2' fill='white' opacity='.4'/%3E%3C!-- Glow effect --%3E%3Ccircle cx='16' cy='9.5' r='5' fill='none' stroke='%2300d4ff' stroke-width='.6' opacity='.4'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/png" sizes="32x32" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230a0e27'/%3E%3Crect x='8' y='20' width='16' height='7' rx='3.5' fill='%2316213e' stroke='%2300d4ff' stroke-width='1.2'/%3E%3Ccircle cx='11.5' cy='23.5' r='2' fill='%23ff006e' opacity='.9'/%3E%3Ccircle cx='20.5' cy='23.5' r='2' fill='%2300ff88' opacity='.9'/%3E%3Crect x='14.5' y='11' width='3' height='10' rx='1.5' fill='%2300d4ff'/%3E%3Ccircle cx='16' cy='9.5' r='4' fill='%2300d4ff' opacity='.95'/%3E%3Ccircle cx='14.8' cy='8.3' r='1.2' fill='white' opacity='.4'/%3E%3C/svg%3E">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/themes.css">
+</head>
+<body>
+
+  <!-- CANVAS BACKGROUND -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="#" class="logo" aria-label="Game Collection Home">
+        <span class="logo-bracket">[</span>
+        <span class="logo-text">GAME<span class="logo-accent">HUB</span></span>
+        <span class="logo-bracket">]</span>
+      </a>
+
+      <nav class="nav" id="nav" role="navigation" aria-label="Navigation principale">
+        <a href="#hero" class="nav-link" data-label="HOME">HOME</a>
+        <a href="#games" class="nav-link" data-label="GAMES">GAMES</a>
+        <a href="#stats" class="nav-link" data-label="STATS">STATS</a>
+        <a href="#about" class="nav-link" data-label="ABOUT">ABOUT</a>
+        <a href="#contact" class="nav-link" data-label="CONTACT">CONTACT</a>
+      </nav>
+
+      <div class="header-controls">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle dark/light mode">
+          <span class="theme-icon">◑</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU OVERLAY -->
+  <div class="mobile-overlay" id="mobile-overlay">
+    <nav class="mobile-nav" aria-label="Navigation mobile">
+      <a href="#hero" class="mobile-nav-link">HOME</a>
+      <a href="#games" class="mobile-nav-link">GAMES</a>
+      <a href="#stats" class="mobile-nav-link">STATS</a>
+      <a href="#about" class="mobile-nav-link">ABOUT</a>
+      <a href="#contact" class="mobile-nav-link">CONTACT</a>
+    </nav>
+  </div>
+
+  <main>
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" id="hero">
+      <div class="hero-bg-grid"></div>
+      <div class="hero-scanlines"></div>
+
+      <div class="hero-content">
+        <div class="hero-badge reveal-up">
+          <span class="hero-badge-dot"></span>
+          PORTFOLIO INTERACTIF — 6 JEUX — VANILLA JS
+        </div>
+
+        <h1 class="hero-title reveal-up" style="--delay: 0.1s">
+          <span class="title-line">BIENVENUE DANS</span>
+          <span class="title-line title-accent">MA COLLECTION</span>
+          <span class="title-line">DE JEUX</span>
+        </h1>
+
+        <p class="hero-sub reveal-up" style="--delay: 0.2s">
+          6 jeux. 1 développeur. Code pur.<br>
+          HTML5 + CSS3 + Vanilla JavaScript — Zéro framework.
+        </p>
+
+        <div class="hero-cta reveal-up" style="--delay: 0.3s">
+          <a href="#games" class="btn btn-primary">
+            <span class="btn-glow"></span>
+            <span>EXPLORER LES JEUX</span>
+            <span class="btn-arrow">→</span>
+          </a>
+          <a href="#about" class="btn btn-secondary">
+            <span>À PROPOS</span>
+          </a>
+        </div>
+
+        <div class="hero-stats reveal-up" style="--delay: 0.4s">
+          <div class="hero-stat">
+            <span class="hero-stat-num" data-count="6">0</span>
+            <span class="hero-stat-label">Jeux</span>
+          </div>
+          <div class="hero-stat-sep">|</div>
+          <div class="hero-stat">
+            <span class="hero-stat-num" id="total-plays-hero">0</span>
+            <span class="hero-stat-label">Parties</span>
+          </div>
+          <div class="hero-stat-sep">|</div>
+          <div class="hero-stat">
+            <span class="hero-stat-num">100%</span>
+            <span class="hero-stat-label">Pure Code</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-scroll-hint">
+        <span>SCROLL</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ==================== GAMES SECTION ==================== -->
+    <section class="section" id="games">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag">// GAMES</span>
+          <h2 class="section-title">EXPLOREZ<br><span class="accent">LES JEUX</span></h2>
+          <p class="section-sub">Cliquez sur une carte pour les détails. Chaque jeu est unique.</p>
+        </div>
+
+        <!-- FILTER & SEARCH -->
+        <div class="filter-bar reveal-up">
+          <div class="filter-buttons" role="group" aria-label="Filtrer par catégorie">
+            <button class="filter-btn active" data-filter="all">Tous <span class="filter-count">6</span></button>
+            <button class="filter-btn" data-filter="action">Action <span class="filter-count">3</span></button>
+            <button class="filter-btn" data-filter="logic">Logique <span class="filter-count">2</span></button>
+            <button class="filter-btn" data-filter="simulation">Simulation <span class="filter-count">1</span></button>
+          </div>
+          <div class="filter-right">
+            <div class="search-box">
+              <span class="search-icon">⌕</span>
+              <input type="search" id="search-input" class="search-input" placeholder="Rechercher un jeu..." aria-label="Rechercher un jeu">
+            </div>
+            <select class="sort-select" id="sort-select" aria-label="Trier par">
+              <option value="default">Tri : Défaut</option>
+              <option value="name-asc">Nom A-Z</option>
+              <option value="name-desc">Nom Z-A</option>
+              <option value="popular">Popularité</option>
+              <option value="plays">Plus joués</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- GAME GRID -->
+        <div class="games-grid" id="games-grid">
+          <!-- Cards injected by JS -->
+        </div>
+
+        <!-- NO RESULTS -->
+        <div class="no-results" id="no-results" hidden>
+          <div class="no-results-icon">¿</div>
+          <p>Aucun jeu trouvé pour "<span id="no-results-query"></span>"</p>
+          <button class="btn btn-secondary" onclick="document.getElementById('search-input').value=''; filterGames();">Réinitialiser</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== STATS ==================== -->
+    <section class="section section-dark" id="stats">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag">// STATS</span>
+          <h2 class="section-title">ANALYTICS<br><span class="accent">HUB</span></h2>
+        </div>
+
+        <div class="stats-grid reveal-up">
+          <div class="stat-card stat-card--main">
+            <div class="stat-card-label">Jeux disponibles</div>
+            <div class="stat-card-value" data-count="6">0</div>
+            <div class="stat-card-icon">🎮</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-label">Parties lancées</div>
+            <div class="stat-card-value" id="stat-total-plays">0</div>
+            <div class="stat-card-icon">▶</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-label">Depuis le hub</div>
+            <div class="stat-card-value" id="stat-total-time">0h</div>
+            <div class="stat-card-icon">⏱</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-label">Technologies</div>
+            <div class="stat-card-value">3</div>
+            <div class="stat-card-icon">⚙</div>
+          </div>
+        </div>
+
+        <!-- POPULARITY CHART -->
+        <div class="popularity-section reveal-up">
+          <h3 class="popularity-title">POPULARITÉ DES JEUX</h3>
+          <div class="popularity-bars" id="popularity-bars">
+            <!-- Injected by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT ==================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-left reveal-up">
+            <span class="section-tag">// ABOUT</span>
+            <h2 class="section-title">LE<br><span class="accent">DÉVELOPPEUR</span></h2>
+            <p class="about-bio">
+              Passionné de développement web et de jeux, je crée des expériences interactives
+              en code pur — sans frameworks, sans béquilles. Chaque projet est l'occasion de
+              pousser HTML5, CSS3 et Vanilla JavaScript à leur limite.
+            </p>
+            <div class="about-links">
+              <a href="https://github.com/breizhimic" target="_blank" rel="noopener" class="about-link">
+                <span class="about-link-icon">◈</span> GitHub
+              </a>
+              <a href="#" class="about-link">
+                <span class="about-link-icon">◈</span> LinkedIn
+              </a>
+            </div>
+          </div>
+
+          <div class="about-right reveal-up" style="--delay: 0.15s">
+            <div class="skills-section">
+              <h3 class="skills-title">STACK TECHNIQUE</h3>
+              <div class="skills-list">
+                <div class="skill-item">
+                  <span class="skill-name">HTML5</span>
+                  <div class="skill-bar"><div class="skill-fill" style="--pct:95%"></div></div>
+                  <span class="skill-pct">95%</span>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">CSS3</span>
+                  <div class="skill-bar"><div class="skill-fill" style="--pct:90%"></div></div>
+                  <span class="skill-pct">90%</span>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">JavaScript</span>
+                  <div class="skill-bar"><div class="skill-fill" style="--pct:88%"></div></div>
+                  <span class="skill-pct">88%</span>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">IA / Algorithmes</span>
+                  <div class="skill-bar"><div class="skill-fill skill-fill--accent" style="--pct:75%"></div></div>
+                  <span class="skill-pct">75%</span>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">Physics Engine</span>
+                  <div class="skill-bar"><div class="skill-fill skill-fill--accent" style="--pct:70%"></div></div>
+                  <span class="skill-pct">70%</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="codebase-stats">
+              <div class="codebase-stat">
+                <span class="codebase-stat-val">~3 500</span>
+                <span class="codebase-stat-label">Lignes de code</span>
+              </div>
+              <div class="codebase-stat">
+                <span class="codebase-stat-val">6</span>
+                <span class="codebase-stat-label">Projets livrés</span>
+              </div>
+              <div class="codebase-stat">
+                <span class="codebase-stat-val">0</span>
+                <span class="codebase-stat-label">Frameworks utilisés</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TECH SHOWCASE ==================== -->
+    <section class="section section-dark tech-section">
+      <div class="container">
+        <div class="tech-grid reveal-up">
+          <div class="tech-pill">HTML5 Canvas</div>
+          <div class="tech-pill tech-pill--cyan">Vanilla JavaScript</div>
+          <div class="tech-pill">CSS Grid & Flexbox</div>
+          <div class="tech-pill tech-pill--magenta">Minimax AI</div>
+          <div class="tech-pill">Physics Engine</div>
+          <div class="tech-pill tech-pill--green">LocalStorage</div>
+          <div class="tech-pill">Intersection Observer</div>
+          <div class="tech-pill tech-pill--cyan">Cellular Automata</div>
+          <div class="tech-pill">CSS Animations</div>
+        </div>
+        <p class="tech-note reveal-up">Tous les jeux sont construits en <strong>HTML5 + CSS3 + Vanilla JavaScript</strong>.<br>Pas de frameworks. Pas de dépendances. Code pur.</p>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-wrapper reveal-up">
+          <span class="section-tag">// CONTACT</span>
+          <h2 class="section-title">LET'S<br><span class="accent">CONNECT</span></h2>
+          <p class="contact-sub">Un projet, une collaboration, ou juste un bonjour ?</p>
+
+          <!--
+            FORMSPREE — Pour recevoir les emails :
+            1. Crée un compte gratuit sur https://formspree.io
+            2. Crée un nouveau formulaire et copie ton endpoint
+            3. Remplace "YOUR_FORM_ID" ci-dessous par ton ID (ex: xpwzgkla)
+          -->
+          <form class="contact-form" id="contact-form"
+                action="https://formspree.io/f/xqenqkyn"
+                method="POST"
+                novalidate>
+            <!-- Formspree: redirection après envoi désactivée (on gère en JS) -->
+            <input type="hidden" name="_subject" value="[GameHub] Nouveau message de contact">
+            <input type="hidden" name="_language" value="fr">
+            <!-- Honeypot anti-spam -->
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-name">Nom</label>
+                <input type="text" id="contact-name" name="name" placeholder="Votre nom" autocomplete="name" required>
+              </div>
+              <div class="form-group">
+                <label for="contact-email">Email</label>
+                <input type="email" id="contact-email" name="email" placeholder="votre@email.com" autocomplete="email" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" rows="5" placeholder="Votre message..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" id="contact-submit">
+              <span class="btn-glow"></span>
+              <span class="btn-label">ENVOYER</span>
+              <span class="btn-arrow">→</span>
+            </button>
+          </form>
+
+          <!-- Message de confirmation post-envoi -->
+          <div class="contact-success" id="contact-success" hidden>
+            <div class="contact-success-icon">✓</div>
+            <p>Message envoyé avec succès !<br>Je vous réponds dès que possible.</p>
+          </div>
+
+          <div class="social-links">
+            <a href="https://github.com/breizhimic" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+              <span>GitHub</span>
+            </a>
+            <span class="social-sep">·</span>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <span>LinkedIn</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <span class="logo-bracket">[</span>GAME<span class="logo-accent">HUB</span><span class="logo-bracket">]</span>
+        </div>
+        <p class="footer-copy">© 2024 breizhimic — Built with ❤️ in HTML/CSS/JavaScript</p>
+        <div class="footer-links">
+          <a href="https://github.com/breizhimic" target="_blank" rel="noopener">GitHub</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== GAME MODAL ==================== -->
+  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <div class="modal" id="modal">
+      <button class="modal-close" id="modal-close" aria-label="Fermer">✕</button>
+      <div class="modal-content" id="modal-content">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- KEYBOARD SHORTCUT MODAL -->
+  <div class="shortcuts-modal" id="shortcuts-modal" hidden>
+    <div class="shortcuts-inner">
+      <h3>RACCOURCIS CLAVIER</h3>
+      <div class="shortcuts-list">
+        <div class="shortcut"><kbd>?</kbd><span>Afficher ce panneau</span></div>
+        <div class="shortcut"><kbd>ESC</kbd><span>Fermer modal / panneau</span></div>
+        <div class="shortcut"><kbd>G</kbd><span>Focus recherche</span></div>
+        <div class="shortcut"><kbd>T</kbd><span>Toggle Dark/Light</span></div>
+        <div class="shortcut"><kbd>1-6</kbd><span>Ouvrir jeu numéroté</span></div>
+      </div>
+      <button class="shortcuts-close" id="shortcuts-close">FERMER</button>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATIONS -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <!-- SCRIPTS -->
+  <script src="js/data.js"></script>
+  <script src="js/stats.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/filter.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
