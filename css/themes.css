@@ -77,7 +77,43 @@
 [data-theme="light"] .card-thumb {
   background: var(--bg-card2);
 }
+[data-theme="light"] .card-title {
+  color: var(--text-main);
+}
 [data-theme="light"] .card-desc {
+  color: var(--text-dim);
+}
+[data-theme="light"] .card-plays {
+  color: var(--text-dim);
+}
+[data-theme="light"] .card-meta {
+  color: rgba(0, 80, 160, 0.6);
+}
+
+/* Textes généraux qui utilisent --white hardcodé */
+[data-theme="light"] body,
+[data-theme="light"] .modal-game-title,
+[data-theme="light"] .modal-game-desc,
+[data-theme="light"] .modal-features-list li,
+[data-theme="light"] .modal-controls p,
+[data-theme="light"] .hero-sub,
+[data-theme="light"] .about-bio,
+[data-theme="light"] .skill-name,
+[data-theme="light"] .pop-name,
+[data-theme="light"] .section-title,
+[data-theme="light"] .shortcuts-modal,
+[data-theme="light"] .shortcut {
+  color: var(--text-main);
+}
+
+[data-theme="light"] .hero-badge {
+  color: var(--text-dim);
+  background: rgba(0,112,192,0.05);
+}
+[data-theme="light"] .search-input {
+  color: var(--text-main);
+}
+[data-theme="light"] .sort-select {
   color: var(--text-dim);
 }
 [data-theme="light"] .card-tag {
