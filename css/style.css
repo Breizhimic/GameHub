@@ -1424,6 +1424,39 @@ kbd {
 }
 
 /* =============================================
+   CONTACT SUCCESS STATE
+   ============================================= */
+.contact-success {
+  text-align: center;
+  padding: 3rem 2rem;
+  animation: reveal-hero 0.5s cubic-bezier(0.4,0,0.2,1) both;
+}
+.contact-success-icon {
+  font-size: 2.5rem;
+  color: var(--green);
+  text-shadow: var(--glow-green);
+  margin-bottom: 1rem;
+  width: 64px; height: 64px;
+  border: 2px solid var(--green);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1.25rem;
+  animation: glow-pulse-cyan 2s ease-in-out infinite;
+}
+.contact-success p {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  line-height: 1.8;
+}
+
+/* SVG tetromino dans la carte Tetris */
+[data-game-id="tetris"] .card-thumb-bg svg {
+  width: 100px;
+  height: 75px;
+  filter: drop-shadow(0 0 12px rgba(0,212,255,0.8));
+}
+
+/* =============================================
    SCROLLBAR
    ============================================= */
 ::-webkit-scrollbar { width: 6px; }

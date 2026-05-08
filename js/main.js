@@ -275,9 +275,9 @@ function initKeyboardShortcuts() {
       return;
     }
 
-    // 1-6 — open game modal
+    // 1-9 — open game modal
     const num = parseInt(e.key);
-    if (num >= 1 && num <= 6 && !inField) {
+    if (num >= 1 && num <= 9 && !inField) {
       const game = GAMES_DATA[num - 1];
       if (game) openModal(game.id);
     }

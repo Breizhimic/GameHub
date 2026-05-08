@@ -141,6 +141,97 @@ const GAMES_DATA = [
     badges: ["ai"],
     color: "#9d4edd",
     colorHex: "rgba(157,78,221,0.12)"
+  },
+  {
+    id: "centipede",
+    title: "Centipède",
+    emoji: "🐛",
+    description: "Détruisez le mille-pattes qui descend en rafales. Rapide, frénétique, addictif.",
+    longDescription: "Un Centipède fidèle à l'arcade original. Le mille-pattes se fraye un chemin à travers un champ de champignons, accélérant à chaque segment touché. Vos réflexes seront mis à rude épreuve au fil des niveaux.",
+    category: "action",
+    tags: ["#arcade", "#rétro", "#shoot"],
+    playUrl: "https://breizhimic.github.io/Centipede/",
+    codeUrl: "https://github.com/breizhimic/Centipede",
+    difficulty: "Moyen",
+    playtime: "3–10 min",
+    features: [
+      "Déplacement procédural du mille-pattes",
+      "Champ de champignons dynamique",
+      "Difficulté progressive par niveau",
+      "Système de score et high score"
+    ],
+    controls: "Flèches ou souris : Déplacer le canon — Espace : Tirer",
+    badges: ["popular"],
+    color: "#00ff88",
+    colorHex: "rgba(0,255,136,0.12)"
+  },
+  {
+    id: "spaceinvaders",
+    title: "Space Invaders",
+    emoji: "👾",
+    description: "Défendez la Terre contre les vagues d'envahisseurs extraterrestres. Le classique SF.",
+    longDescription: "Une recréation du légendaire Space Invaders avec vagues d'ennemis en formation, boucliers destructibles et OVNI surprise. Les envahisseurs accélèrent à mesure qu'ils sont éliminés — la pression monte inexorablement.",
+    category: "action",
+    tags: ["#arcade", "#shoot", "#rétro"],
+    playUrl: "https://breizhimic.github.io/SpaceInvaders/",
+    codeUrl: "https://github.com/breizhimic/SpaceInvaders",
+    difficulty: "Moyen",
+    playtime: "5–15 min",
+    features: [
+      "Formations d'ennemis en vagues",
+      "Boucliers destructibles",
+      "OVNI bonus aléatoire",
+      "Accélération progressive des ennemis"
+    ],
+    controls: "Flèches : Déplacer le vaisseau — Espace : Tirer",
+    badges: ["popular", "new"],
+    color: "#ff006e",
+    colorHex: "rgba(255,0,110,0.12)"
+  },
+  {
+    id: "tetris",
+    title: "Tetris",
+    emoji: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 60" width="80" height="60" aria-label="Tétromino T">
+  <defs>
+    <filter id="glow-t">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <!-- Rangée du haut : 3 blocs (T horizontale) -->
+  <rect x="5"  y="5" width="20" height="20" rx="3" fill="#00d4ff" opacity=".9" filter="url(#glow-t)"/>
+  <rect x="5"  y="5" width="20" height="20" rx="3" fill="none" stroke="#ffffff" stroke-width=".8" opacity=".4"/>
+  <rect x="30" y="5" width="20" height="20" rx="3" fill="#00d4ff" opacity=".9" filter="url(#glow-t)"/>
+  <rect x="30" y="5" width="20" height="20" rx="3" fill="none" stroke="#ffffff" stroke-width=".8" opacity=".4"/>
+  <rect x="55" y="5" width="20" height="20" rx="3" fill="#00d4ff" opacity=".9" filter="url(#glow-t)"/>
+  <rect x="55" y="5" width="20" height="20" rx="3" fill="none" stroke="#ffffff" stroke-width=".8" opacity=".4"/>
+  <!-- Bloc du bas : centre (queue du T) -->
+  <rect x="30" y="30" width="20" height="20" rx="3" fill="#00d4ff" opacity=".9" filter="url(#glow-t)"/>
+  <rect x="30" y="30" width="20" height="20" rx="3" fill="none" stroke="#ffffff" stroke-width=".8" opacity=".4"/>
+  <!-- Reflets intérieurs -->
+  <rect x="8"  y="8"  width="7" height="4" rx="1" fill="white" opacity=".25"/>
+  <rect x="33" y="8"  width="7" height="4" rx="1" fill="white" opacity=".25"/>
+  <rect x="58" y="8"  width="7" height="4" rx="1" fill="white" opacity=".25"/>
+  <rect x="33" y="33" width="7" height="4" rx="1" fill="white" opacity=".25"/>
+</svg>`,
+    description: "Le puzzle emblématique. Empile les tétrominos, complète les lignes, survive le plus longtemps possible.",
+    longDescription: "Une implémentation complète du Tetris classique avec les 7 tétrominos officiels, rotation SRS, système de score par lignes multiples (Single, Double, Triple, Tetris) et accélération progressive. Simple à prendre en main, impossible à maîtriser.",
+    category: "logic",
+    tags: ["#puzzle", "#classique", "#réflexes"],
+    playUrl: "https://breizhimic.github.io/Tetris/",
+    codeUrl: "https://github.com/breizhimic/Tetris",
+    difficulty: "Moyen",
+    playtime: "5–30 min",
+    features: [
+      "7 tétrominos officiels",
+      "Rotation et wall-kicks",
+      "Score progressif (lignes multiples)",
+      "Vitesse croissante par niveau"
+    ],
+    controls: "Flèches : Déplacer/Descendre — ↑ ou Z : Rotation — Espace : Drop instantané",
+    badges: ["popular"],
+    color: "#00d4ff",
+    colorHex: "rgba(0,212,255,0.12)"
   }
 ];
 
