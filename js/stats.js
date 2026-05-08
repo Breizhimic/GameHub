@@ -177,7 +177,7 @@ function renderPopularityBars() {
         <div class="pop-bar-track">
           <div class="pop-bar-fill" data-pct="${pct}"></div>
         </div>
-        <span class="pop-count">${item.plays} <small>plays</small></span>
+        <span class="pop-count">${item.plays} <small>${item.plays > 1 ? 'plays' : 'play'}</small></span>
       </div>
     `;
   }).join('');
