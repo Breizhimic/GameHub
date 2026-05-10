@@ -230,8 +230,32 @@ const GAMES_DATA = [
     ],
     controls: "Flèches : Déplacer/Descendre — ↑ ou Z : Rotation — Espace : Drop instantané",
     badges: ["popular"],
+    icon: "🟦",
     color: "#00d4ff",
     colorHex: "rgba(0,212,255,0.12)"
+  },
+  {
+    id: "donkeykong",
+    title: "Donkey Kong",
+    emoji: "🦍",
+    description: "Grimpez les échafaudages, évitez les tonneaux, sauvez la princesse. L'arcade légendaire.",
+    longDescription: "Une recréation du classique Donkey Kong de 1981. Grimpez les plateformes et les échelles sous une pluie de tonneaux lancés par le gorille géant. Minutage précis, réflexes rapides et stratégie sont indispensables pour atteindre le sommet.",
+    category: "action",
+    tags: ["#arcade", "#rétro", "#plateforme"],
+    playUrl: "https://breizhimic.github.io/DonkeyKong/",
+    codeUrl: "https://github.com/breizhimic/DonkeyKong",
+    difficulty: "Difficile",
+    playtime: "3–15 min",
+    features: [
+      "Plateformes et échelles fidèles à l'arcade",
+      "Tonneaux à trajectoires variées",
+      "Système de vies et de score",
+      "Difficulté progressive"
+    ],
+    controls: "Flèches : Déplacer — ↑ ou échelle : Grimper — Espace : Sauter",
+    badges: ["popular", "new"],
+    color: "#ff006e",
+    colorHex: "rgba(255,0,110,0.12)"
   }
 ];
 

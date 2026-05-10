@@ -95,7 +95,7 @@ const StatsManager = {
         id: g.id,
         title: g.title,
         plays: data.games[g.id]?.plays || 0,
-        emoji: g.emoji
+        emoji: g.icon ?? g.emoji
       }))
       .sort((a, b) => b.plays - a.plays);
   },
